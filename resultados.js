@@ -13,6 +13,24 @@ function getFetch(){
   }).then(data=>{
       let partidos = data.matches;
 
+      let percent = document.querySelector(".percent")
+      let progress = document.querySelector(".progress")
+      let count = 4;
+      let per = 16;
+      let cargando = setInterval(animate, 50);
+      function animate(){
+      if(count == 100 && per == 400){
+      percent.classList.add("tetx-blink");
+      clearInterval(cargando);
+      document.getElementById("desaparece").style.display = "none";
+      }else{
+      per = per + 4;
+      count = count +1;
+      progress.style.width = per + "px";
+      percent.textContent = count + "%";
+      }
+    }
+
       genera_tabla(partidos);  
 
       crearListener(partidos);
@@ -93,11 +111,14 @@ function filtrarPorNombre(partidos) {
     }
     return false;
   });
+    
+    genera_tabla(equipoNombre);
+  }
 
-  genera_tabla(equipoNombre);
-}
 
 filtrarPorNombre(partidos);
+
+
 
 function vaciar() {
   document.getElementById("partidos_body").innerHTML = "";
@@ -106,6 +127,12 @@ function vaciar() {
 function filtrarEmpates(partidos) {
   let resultados = document.querySelector("input").value;
   let empates = partidos.filter((e) => {
+    if(resultados == ""){
+      return partidos;
+    }
+    if(resultados == ""){
+      return partidos;
+    }
     if (e.score.winner == "DRAW") {
       return true;
     }
@@ -116,8 +143,12 @@ function filtrarEmpates(partidos) {
 
 
 function filtrarProximo(partidos) {
+  
   let resultados = document.querySelector("input").value;
   let proximos = partidos.filter((e) => {
+    if(resultados == ""){
+      return partidos;
+    }
     if (e.score.fullTime.homeTeam == null && e.score.fullTime.awayTeam == null) {
       return true;
     }
@@ -129,14 +160,17 @@ function filtrarProximo(partidos) {
 
 
 function filtrarGanados(partidos) {
-  let resultado = document.querySelector("input").value;
+  let equipo = document.querySelector("input").value;
   let ganados = partidos.filter((e) => {
 
-    if(e.homeTeam.name.toLowerCase().includes(resultado) && e.score.winner === "HOME_TEAM"){
+    if(equipo == false){
+      return partidos;
+    }
+    if(e.homeTeam.name.toLowerCase().includes(equipo) && e.score.winner === "HOME_TEAM"){
       return true
     }
 
-    else if(e.awayTeam.name.toLowerCase().includes(resultado) && e.score.winner === "AWAY_TEAM" ){
+    else if(e.awayTeam.name.toLowerCase().includes(equipo) && e.score.winner === "AWAY_TEAM" ){
       return true
     }
 
@@ -156,14 +190,17 @@ function filtrarGanados(partidos) {
 
 
 function filtrarPerdidos(partidos) {
-  let resultado = document.querySelector("input").value;
-  let ganados = partidos.filter((e) => {
-
-    if(e.homeTeam.name.toLowerCase().includes(resultado) && e.score.winner === "AWAY_TEAM"){
+  
+  let equipo = document.querySelector("input").value;
+  let perdidos = partidos.filter((e) => {
+    if(equipo == ""){
+      return partidos;
+    }
+    if(e.homeTeam.name.toLowerCase().includes(equipo) && e.score.winner === "AWAY_TEAM"){
       return true
     }
 
-    else if(e.awayTeam.name.toLowerCase().includes(resultado) && e.score.winner === "HOME_TEAM" ){
+    else if(e.awayTeam.name.toLowerCase().includes(equipo) && e.score.winner === "HOME_TEAM" ){
       return true
     }
 
@@ -179,7 +216,7 @@ function filtrarPerdidos(partidos) {
   })
 
 
-  filtrarPorNombre(ganados);
+  filtrarPorNombre(perdidos);
 }
 
  function crearListener(partidos) {
@@ -207,21 +244,9 @@ function filtrarPerdidos(partidos) {
   proximos.addEventListener("click", () => {
     filtrarProximo(partidos);
   })
+  let todos = document.getElementById("todos");
+  todos.addEventListener("click", () => {
+    filtrarPorNombre(partidos)
+  })
 }
  
-
-
-
-
-
- let op = setInterval(incNum, 20);
-function incNum(){
-  let text = document.getElementById("text");
-  let line = document.getElementById("line");
-
-  let a = window.getComputedStyle(line, ":before").getPropertyValue("width");
-  a = Math.floor((parseInt(a) / 10) * 2);
-  if(a == 100){
-    clearInterval(op);
-  }
-} 

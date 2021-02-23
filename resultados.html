@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -25,18 +25,24 @@
       </div>
     </div>
   </nav>
-   <!-- <div class="main"> 
-    <p class="text" id="text">0%</p>
-    <div class="line" id="line"></div>
-  </div> -->
  
-  <form class="buscar">
+	 <div class="loading" id="desaparece">
+     <div class="percent">100%</div>
+     <div class="progress-bar">
+       <div class="progress"></div>
+     </div>
+   </div>
+	
+  <form class="buscar" action="#" method="get">
     <p class="busqueda">
-      Búsqueda de equipos: <input  id="filtro" type="search" name="busquedaequipo" placeholder="Escribe aqui el nombre del equipo" class="barra">
+      Búsqueda de equipos: <input  id="filtro" type="text" name="busquedaequipo" placeholder="Escribe aqui el nombre del equipo" class="barra" required="required"/>
       <input type="button" value="Buscar" id="boton">
     </p>
     <p>
       <legend>Elige</legend>
+      <label>
+        <input type="radio" name="color" name="win" id="todos"> Todos
+    </label>
         <label>
             <input type="radio" name="color" name="win" id="ganado"> Ganados
         </label>
@@ -50,8 +56,6 @@
           <input type="radio" name="color" name="todos" id="proximo"> Proximos partidos
       </label>
     </p>
-
-
   </form>
 
   <div class="table table-responsive table-striped">
