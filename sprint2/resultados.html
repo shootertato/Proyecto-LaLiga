@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <title>La Liga</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <img src="/img/soccer-ball-png.webp" class="img">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/home.html">Home</a>
+          <a class="nav-link active" aria-current="page" href="/clasificacion.html">Clasificación</a>
+          <a class="nav-link active" aria-current="page" href="/resultados.html">Resultados</a>
+          <a class="nav-link active" aria-current="page" href="/topEquipos.html">Top 5</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <form class="buscar">
+    <p class="busqueda">
+      Búsqueda de equipos: <input  id="filtro" type="search" name="busquedaequipo" placeholder="Escribe aqui el nombre del equipo" class="barra">
+      <input type="button" value="Buscar" onclick="filtrarPorNombre(partidos)" class="boton">
+    </p>
+    <p>
+      <legend>Elige</legend>
+        <label>
+            <input type="radio" name="color" name="todos" onclick="filtrarProximo(partidos)"> Proximos partidos
+        </label>
+        <label>
+            <input type="radio" name="color" name="win" onclick="filtrarGanados(partidos)"> Ganados
+        </label>
+        <label>
+            <input type="radio" name="color" name="draw" onclick="filtrarEmpates(partidos)"> Empatados
+        </label>
+        <label>
+            <input type="radio" name="color" name="lose" onclick="filtrarPerdidos(partidos)"> Perdidos
+        </label>
+    </p>
+
+
+  </form>
+
+  <div class="table table-responsive table-striped">
+    <table class="resultados">
+      <thead class="encabezado">
+        <tr>
+          <th class="local">Local</th>
+          <th class="resultado">Resultado</th>
+          <th class="visitante">Visitante</th>
+        </tr>
+      </thead>
+      <tbody id="partidos_body">
+
+      </tbody>
+    </table>
+  </div>
+
+  <script src="matches.js"></script>
+  <script src="resultados.js"></script>
+
+</body>
+
+</html>

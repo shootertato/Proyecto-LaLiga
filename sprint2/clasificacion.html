@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <title>La Liga</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <img src="/img/soccer-ball-png.webp" class="img">
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="/home.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="/clasificacion.html">Clasificación</a>
+              <a class="nav-link active" aria-current="page" href="/resultados.html">Resultados</a>
+              <a class="nav-link active" aria-current="page" href="/topEquipos.html">Top 5</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="table table-responsive table-striped">
+    <table class="resultados">
+        <thead class="encabezado">
+            <th>Posición</th>
+            <th>Club</th>
+            <th>Puntos</th>
+            <th>PJ</th>
+            <th>PG</th>
+            <th>PE</th>
+            <th>PP</th>
+            <th>GF</th>
+            <th>GC</th>
+            <th>DG</th>
+            <th>Ultimos 5</th>
+        </thead>
+        <tbody id="clasificacion_body">
+
+        </tbody>
+    </table>
+  </div>
+
+    <script src="clasification.js"></script>
+    <script src="clasificacion.js"></script>
+    
+</body>
+
+</html>

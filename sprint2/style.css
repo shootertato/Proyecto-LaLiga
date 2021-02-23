@@ -1,0 +1,112 @@
+.img{
+    height: 80px;
+    width: 80px;
+}
+
+table.clasificacion thead th{
+    padding: 15px;
+}
+thead.encabezado{
+    background-color: red;
+}
+td{
+    padding: 15px;
+}
+th{
+    padding: 15px;
+}
+button{
+    background-color: red;
+    border: solid black 3px;
+    color: black;
+    width: 160px;
+    font-size: 30px;
+}
+button a{
+    color: black;
+    text-decoration:none;
+}
+th.clasificacion{
+    text-align: center;
+}
+th.resultado{
+    text-align: center;
+}
+th.local{
+    text-align: right;
+}
+th.visitante{
+    text-align: left;
+}
+td.posicion{
+    text-align: center;
+}
+td.resultado{
+    text-align: center;
+}
+td.local{
+    text-align: right;
+}
+td.visitante{
+    text-align: left;
+}
+.ultimosPartidos{
+    height: 20px;
+    width: 20px;
+    border-radius: 30px;
+}
+.win{
+    height: 23px;
+    width: 23px;
+    border-radius: 25px;
+    background-color: green;
+    float: left;
+    text-align: center;
+}
+.lose{
+    height: 23px;
+    width: 23px;
+    border-radius: 25px;
+    background-color: red;
+    float: left;
+    text-align: center;
+}
+.draw{
+    height: 23px;
+    width: 23px;
+    border-radius: 25px;
+    background-color: orange;
+    float: left;
+    text-align: center;
+}
+.resultados {
+    margin-top: 5%;
+    margin-left: 6%;
+    margin-right: 6%;
+    width: 90%;
+    border-left: solid 2px black;
+    border-right: solid 2px black;
+}
+thead{
+    border: solid 2px black;
+}
+h1.titulo{
+    margin-left: 6% ;
+    margin-top: 30px;
+    margin-bottom: -40px;
+}
+.busqueda{
+font-size: 25px;
+padding-bottom: 10px;
+}
+.barra{
+width: 60%;
+}
+.boton{
+
+}
+.buscar{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
