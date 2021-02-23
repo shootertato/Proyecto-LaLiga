@@ -1,6 +1,28 @@
 let data = matches;
 let partidos = data.matches;
 
+function getFetch(){
+  const url = "http://api.football-data.org/v2/competitions/2014/matches";
+  fetch(url,{
+      method: "GET",
+      headers: {
+          "X-Auth-Token": "3c3cf5121aca408783e167b985e62751"
+      }
+  }).then(response =>{
+      if(response.ok) return response.json();
+  }).then(data=>{
+      let partidos = data.matches;
+
+      genera_tabla(partidos);  
+
+      crearListener(partidos);
+
+  })
+  
+}
+getFetch()
+
+
 function genera_tabla(partidos) {
   let tblBody = document.getElementById("partidos_body");
   vaciar();
@@ -60,6 +82,8 @@ function genera_tabla(partidos) {
 }
 genera_tabla(partidos);
 
+
+
 function filtrarPorNombre(partidos) {
   let nombre = document.querySelector("input").value;
 
@@ -89,7 +113,7 @@ function filtrarEmpates(partidos) {
   });
   filtrarPorNombre(empates)
 }
-filtrarEmpates(partidos);
+
 
 function filtrarProximo(partidos) {
   let resultados = document.querySelector("input").value;
@@ -101,7 +125,7 @@ function filtrarProximo(partidos) {
   });
   filtrarPorNombre(proximos)
 }
-filtrarProximo(partidos);
+
 
 
 function filtrarGanados(partidos) {
@@ -129,7 +153,7 @@ function filtrarGanados(partidos) {
 
   filtrarPorNombre(ganados);
 }
-filtrarGanados(partidos);
+
 
 function filtrarPerdidos(partidos) {
   let resultado = document.querySelector("input").value;
@@ -158,23 +182,46 @@ function filtrarPerdidos(partidos) {
   filtrarPorNombre(ganados);
 }
 
-filtrarPerdidos(partidos);
+ function crearListener(partidos) {
+  let boton = document.getElementById("boton");
+  boton.addEventListener("click", () => {
+    filtrarPorNombre(partidos)
+  })
 
+  let ganados = document.getElementById("ganado");
+  ganados.addEventListener("click", () => {
+    filtrarGanados(partidos);
+  })
 
-function getFetch(){
-  const url = "http://api.football-data.org/v2/competitions/2014/matches";
-  fetch(url,{
-      method: "GET",
-      headers: {
-          "X-Auth-Token": "3c3cf5121aca408783e167b985e62751"
-      }
-  }).then(response =>{
-      if(response.ok) return response.json();
-  }).then(data=>{
-      let tablaFetch = data.matches;
+  let perdidos = document.getElementById("perdido");
+  perdidos.addEventListener("click", () => {
+    filtrarPerdidos(partidos);
+  })
 
-      genera_tabla(tablaFetch);    
-      
+  let empatados = document.getElementById("empatado");
+  empatados.addEventListener("click", () => {
+    filtrarEmpates(partidos);
+  })
+
+  let proximos = document.getElementById("proximo");
+  proximos.addEventListener("click", () => {
+    filtrarProximo(partidos);
   })
 }
-getFetch()
+ 
+
+
+
+
+
+ let op = setInterval(incNum, 20);
+function incNum(){
+  let text = document.getElementById("text");
+  let line = document.getElementById("line");
+
+  let a = window.getComputedStyle(line, ":before").getPropertyValue("width");
+  a = Math.floor((parseInt(a) / 10) * 2);
+  if(a == 100){
+    clearInterval(op);
+  }
+} 
