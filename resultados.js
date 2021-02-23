@@ -13,27 +13,12 @@ function getFetch(){
   }).then(data=>{
       let partidos = data.matches;
 
-      let percent = document.querySelector(".percent")
-      let progress = document.querySelector(".progress")
-      let count = 4;
-      let per = 16;
-      let cargando = setInterval(animate, 50);
-      function animate(){
-      if(count == 100 && per == 400){
-      percent.classList.add("tetx-blink");
-      clearInterval(cargando);
-      document.getElementById("desaparece").style.display = "none";
-      }else{
-      per = per + 4;
-      count = count +1;
-      progress.style.width = per + "px";
-      percent.textContent = count + "%";
-      }
-    }
-
+      
+      
       genera_tabla(partidos);  
-
       crearListener(partidos);
+      quitarLoader()
+      
 
   })
   
@@ -111,7 +96,15 @@ function filtrarPorNombre(partidos) {
     }
     return false;
   });
+
+  if(equipoNombre.length === 0){
+    getErrorFiltro();
+     }
+     else{
+       getQuitarErrorFiltro();
+     } 
     
+  
     genera_tabla(equipoNombre);
   }
 
@@ -141,6 +134,12 @@ function filtrarEmpates(partidos) {
   filtrarPorNombre(empates)
 }
 
+ function quitarLoader(){
+  let contenedor = document.getElementById("contenedor_carga");
+  contenedor.style.visibility = "hidden";
+  contenedor.style.opacity = "0";
+}
+
 
 function filtrarProximo(partidos) {
   
@@ -154,6 +153,8 @@ function filtrarProximo(partidos) {
     }
     return false;
   });
+
+
   filtrarPorNombre(proximos)
 }
 
@@ -250,3 +251,17 @@ function filtrarPerdidos(partidos) {
   })
 }
  
+function getErrorFiltro(){ //Creada para la alerta de filtros. Llamada en función de filtros.
+  let alerta = document.querySelector(".alerta");
+  alerta.innerHTML= "";
+  let texto = document.createElement("p");
+  texto.innerText = "Ese equipo no existe"
+  texto.classList.add("textoError")
+  alerta.append(texto)
+  
+  }
+  
+  function getQuitarErrorFiltro (){ //Creada para quitar alerta de filtro.LLamada en función de filtros
+    let alerta = document.querySelector(".alerta");
+    alerta.innerHTML = ""
+  }

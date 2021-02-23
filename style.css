@@ -1,3 +1,7 @@
+body {
+    overflow: scroll;
+    overflow-x: hidden;    
+ }
 .img{
     height: 80px;
     width: 80px;
@@ -10,10 +14,14 @@ thead.encabezado{
     background-color: red;
 }
 td{
-    padding: 15px;
+    padding: 10px;
 }
 th{
-    padding: 15px;
+    padding: 10px;
+}
+.alerta{
+    color: red;
+    text-align: center;
 }
 button{
     background-color: red;
@@ -108,7 +116,7 @@ width: 60%;
     margin-bottom: 0px;
 }
 
-
+/* 
 
 .body{
     font-family: "Roboto";
@@ -146,4 +154,64 @@ width: 60%;
 }
 .text-blink{
     animation: blink .7s ease-in-out .1s;
+}
+.titulos{
+    margin-top: 2.5%;
+    text-align: center;
+}
+.textos{
+    border: 3px black solid;
+    text-align: center;
+    background-color: red;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 4px;
+} */
+
+.link{
+    text-decoration: none;
+    color: black;
+    
+    font-size: 20px;
+}
+
+*,* ::after, *::before{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#contenedor_carga{
+    height: 100%;
+    width: 100%;
+    position:fixed;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index: 10000;
+}
+
+#carga{
+    border: 15px solid #ccc;
+    border-top-color: #00ff0d;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+   
+    -webkit-animation: girar 1.5s linear infinite;
+    -o-animation: girar 1.5s linear infinite;;
+    animation: girar 1.5s linear infinite;
+}
+
+@keyframes girar{
+    from{ transform: rotate(0deg);}
+    to{ transform: rotate(360deg);}
 }

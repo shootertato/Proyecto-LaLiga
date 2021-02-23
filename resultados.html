@@ -26,13 +26,17 @@
     </div>
   </nav>
  
-	 <div class="loading" id="desaparece">
+	 <!-- <div class="loading" id="desaparece">
      <div class="percent">100%</div>
      <div class="progress-bar">
        <div class="progress"></div>
      </div>
-   </div>
+   </div> -->
 	
+   <div id="contenedor_carga">
+     <div id="carga"></div>
+   </div>
+
   <form class="buscar" action="#" method="get">
     <p class="busqueda">
       Búsqueda de equipos: <input  id="filtro" type="text" name="busquedaequipo" placeholder="Escribe aqui el nombre del equipo" class="barra" required="required"/>
@@ -56,7 +60,9 @@
           <input type="radio" name="color" name="todos" id="proximo"> Proximos partidos
       </label>
     </p>
+    
   </form>
+  <div class="alerta"></div>
 
   <div class="table table-responsive table-striped">
     <table class="resultados">
