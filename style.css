@@ -102,9 +102,6 @@ padding-bottom: 10px;
 .barra{
 width: 60%;
 }
-.boton{
-
-}
 .buscar{
     text-align: center;
     margin-top: 25px;
@@ -149,15 +146,4 @@ width: 60%;
 }
 .text-blink{
     animation: blink .7s ease-in-out .1s;
-}
-@keyframe blink{
-    0%{
-        opacity: 1;
-    }
-    50%{
-        opacity: 2;
-    }
-    100%{
-        opacity: 1;
-    }
 }
