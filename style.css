@@ -124,12 +124,12 @@ width: 60%;
 .textos{
     border: 3px black solid;
     text-align: center;
-    background-color: red;
+    background-color: lightcoral;
     margin-left: 30%;
     margin-right: 30%;
     padding: 4px;
     font-size: 30px;
-} 
+}
 
 .link{
     text-decoration: none;
