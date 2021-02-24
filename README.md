@@ -37,3 +37,4 @@ Tecnologias usadas en este proyecto:
 - Añadir más ligas, competiciones.
 - Mejorar el estilo.
 - Mejorar la landing page.
+- Añadir la jornada del partido
