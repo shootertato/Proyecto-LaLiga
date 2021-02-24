@@ -1,6 +1,8 @@
 let data = standings;
 let resultado = data.standings[0].table;
 
+/* Esta funcion crea la tabla de clasificacion y pone los esqudos */
+
 function clasificacion(resultado) {
   let tblBody = document.getElementById("clasificacion_body");
 

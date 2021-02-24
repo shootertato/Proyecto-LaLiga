@@ -1,6 +1,8 @@
 let data = matches;
 let partidos = data.matches;
 
+/* Hace las estadisticas de la tabla top 5 mejor*/
+
 function topMejores(partidos) {
   let arrayNueva = [];
 
@@ -52,7 +54,7 @@ function topMejores(partidos) {
   tablaTop5(arrayNueva);
 }
 
-
+/* Crea la tabla top 5 mejor*/
 
 function tablaTop5(array) {
   
@@ -86,6 +88,8 @@ function tablaTop5(array) {
 }
 
 /* --------------------------- */
+
+/* Crea la tabla y las estadisticas de la tabla top 5 peor*/
 
 function getStats2(partidos) {
   let arrayNuevo2 = [];

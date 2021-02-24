@@ -25,6 +25,7 @@ function getFetch(){
 }
 getFetch()
 
+/* genera_tabla  crea la tabla con el resultado de todos los partidos*/
 
 function genera_tabla(partidos) {
   let tblBody = document.getElementById("partidos_body");
@@ -85,7 +86,7 @@ function genera_tabla(partidos) {
 }
 genera_tabla(partidos);
 
-
+/* filtrarPorNombre hace un filtro segun lo que escribes en la barra de busqueda */
 
 function filtrarPorNombre(partidos) {
   let nombre = document.querySelector("input").value;
@@ -112,6 +113,7 @@ function filtrarPorNombre(partidos) {
 filtrarPorNombre(partidos);
 
 
+/* vaciar hace que la tabla se vacie de contenido para que no se concatene el contenido */
 
 function vaciar() {
   document.getElementById("partidos_body").innerHTML = "";
@@ -140,6 +142,7 @@ function filtrarEmpates(partidos) {
   contenedor.style.opacity = "0";
 }
 
+/* Hace un filtro de los partidos que aun no se han jugado del equipo seleccionado */
 
 function filtrarProximo(partidos) {
   
@@ -158,7 +161,7 @@ function filtrarProximo(partidos) {
   filtrarPorNombre(proximos)
 }
 
-
+/* Hace un filtro de los partidos ganados del equipo seleccionado */
 
 function filtrarGanados(partidos) {
   let equipo = document.querySelector("input").value;
@@ -189,6 +192,7 @@ function filtrarGanados(partidos) {
   filtrarPorNombre(ganados);
 }
 
+/* Hace un filtro de los partidos perdidos del equipo seleccionado */
 
 function filtrarPerdidos(partidos) {
   
@@ -219,6 +223,8 @@ function filtrarPerdidos(partidos) {
 
   filtrarPorNombre(perdidos);
 }
+
+/* Hace un filtro para los arraybutton */
 
  function crearListener(partidos) {
   let boton = document.getElementById("boton");
@@ -251,7 +257,9 @@ function filtrarPerdidos(partidos) {
   })
 }
  
-function getErrorFiltro(){ //Creada para la alerta de filtros. Llamada en función de filtros.
+/* Creada para la alerta de filtros. Llamada en función de filtros. */
+
+function getErrorFiltro(){ 
   let alerta = document.querySelector(".alerta");
   alerta.innerHTML= "";
   let texto = document.createElement("p");
@@ -261,7 +269,9 @@ function getErrorFiltro(){ //Creada para la alerta de filtros. Llamada en funci�
   
   }
   
-  function getQuitarErrorFiltro (){ //Creada para quitar alerta de filtro.LLamada en función de filtros
+  /* Creada para quitar alerta de filtro.LLamada en función de filtros */
+
+  function getQuitarErrorFiltro (){ 
     let alerta = document.querySelector(".alerta");
     alerta.innerHTML = ""
   }
