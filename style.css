@@ -115,6 +115,22 @@ width: 60%;
     margin-top: 25px;
     margin-bottom: 0px;
 }
+
+
+.titulos{
+    margin-top: 2.5%;
+    text-align: center;
+}
+.textos{
+    border: 3px black solid;
+    text-align: center;
+    background-color: red;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 4px;
+    font-size: 30px;
+} 
+
 .link{
     text-decoration: none;
     color: black;

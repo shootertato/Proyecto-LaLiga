@@ -136,6 +136,8 @@ function filtrarEmpates(partidos) {
   filtrarPorNombre(empates)
 }
 
+/* Quita el loader */
+
  function quitarLoader(){
   let contenedor = document.getElementById("contenedor_carga");
   contenedor.style.visibility = "hidden";

@@ -146,6 +146,12 @@ function getStats2(partidos) {
   
 }
 
+function quitarLoader(){
+  let contenedor = document.getElementById("contenedor_carga");
+  contenedor.style.visibility = "hidden";
+  contenedor.style.opacity = "0";
+}
+
 
 function getFetch(){
   const url = "http://api.football-data.org/v2/competitions/2014/matches";
@@ -161,6 +167,7 @@ function getFetch(){
 
   topMejores(tablaFetch);
   getStats2(tablaFetch);
+  quitarLoader();
   })
   
 }

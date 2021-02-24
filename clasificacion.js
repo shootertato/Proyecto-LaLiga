@@ -98,6 +98,12 @@ function clasificacion(resultado) {
   }
 }
 
+function quitarLoader(){
+  let contenedor = document.getElementById("contenedor_carga");
+  contenedor.style.visibility = "hidden";
+  contenedor.style.opacity = "0";
+}
+
 function getFetch(){
   const url = "http://api.football-data.org/v2/competitions/2014/standings";
   fetch(url,{
@@ -111,6 +117,7 @@ function getFetch(){
       let tablaFetch = data.standings[0].table
 
    clasificacion(tablaFetch) 
+   quitarLoader()
   })
 }
 getFetch()
