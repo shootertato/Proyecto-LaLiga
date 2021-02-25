@@ -11,7 +11,7 @@
   <title>La Liga</title>
 </head>
 
-<body>
+<body class="body">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a href="/home.html"><img src="/img/soccer-ball-png.webp" class="img"></a>
@@ -36,29 +36,29 @@
       <input type="button" value="Buscar" id="boton">
     </p>
     <p>
-      <legend>Elige</legend>
-      <label>
-        <input type="radio" name="color" name="win" id="todos"> Todos
+      <legend class="leyenda">Elige</legend>
+      <label class="etiqueta">
+        <input type="radio" name="color" name="win" id="todos" class="radio"> Todos
     </label>
-        <label>
-            <input type="radio" name="color" name="win" id="ganado"> Ganados
+        <label class="etiqueta">
+            <input type="radio" name="color" name="win" id="ganado" class="radio"> Ganados
         </label>
-        <label>
-            <input type="radio" name="color" name="draw" id="empatado"> Empatados
+        <label class="etiqueta">
+            <input type="radio" name="color" name="draw" id="empatado" class="radio"> Empatados
+        </label class="etiqueta">
+        <label class="etiqueta">
+            <input type="radio" name="color" name="lose" id="perdido" class="radio"> Perdidos
         </label>
-        <label>
-            <input type="radio" name="color" name="lose" id="perdido"> Perdidos
-        </label>
-        <label>
-          <input type="radio" name="color" name="todos" id="proximo"> Proximos partidos
+        <label class="etiqueta">
+          <input type="radio" name="color" name="todos" id="proximo" class="radio"> Proximos partidos
       </label>
     </p>
     
   </form>
   <div class="alerta"></div>
 
-  <div class="table table-responsive table-striped">
-    <table class="resultados">
+  
+    <table  class="table table-hover" id="resultados">
       <thead class="encabezado">
         <tr>
           <th class="local">Local</th>
@@ -70,7 +70,7 @@
 
       </tbody>
     </table>
-  </div>
+
 
   <script src="matches.js"></script>
   <script src="resultados.js"></script>

@@ -1,6 +1,3 @@
-let data = matches;
-let partidos = data.matches;
-
 /* Hace las estadisticas de la tabla top 5 mejor*/
 
 function topMejores(partidos) {
@@ -49,7 +46,7 @@ function topMejores(partidos) {
   for (let j = 0; j < arrayNueva.length; j++) {
     let average = arrayNueva[j].goals / arrayNueva[j].matches;
 
-    arrayNueva[j].average = average;
+    arrayNueva[j].average = average.toFixed(2);
   }
   tablaTop5(arrayNueva);
 }
@@ -66,19 +63,31 @@ function tablaTop5(array) {
     });
 
     let tr = document.createElement("tr");
-
+    let escudo = document.createElement("td");
+    
     let club = document.createElement("td");
+    let imageAway = document.createElement("img");
+    imageAway.setAttribute(
+      "src",
+      `https://crests.football-data.org/${array[i].id}.svg`
+    );
+    imageAway.setAttribute("alt", "escudo equipo");
+    imageAway.width = 50;
     club.innerText = array[i].name;
 
     let goles = document.createElement("td");
     goles.innerText = array[i].goals;
-
+    
     let partidos = document.createElement("td");
     partidos.innerText = array[i].matches;
 
     let promedio = document.createElement("td");
     promedio.innerText = array[i].average;
 
+    imageAway.classList.add("imagen");
+
+    escudo.append(imageAway);
+    tr.append(escudo);
     tr.append(club);
     tr.append(goles);
     tr.append(partidos);
@@ -127,9 +136,18 @@ function getStats2(partidos) {
   let tblBody = document.getElementById("perdedores_body");
   for (let i = 0; i < 5; i++) {
     let tr = document.createElement("tr");
-
+    let escudo = document.createElement("td");
+    
     let club = document.createElement("td");
+    let imageAway = document.createElement("img");
+    imageAway.setAttribute(
+      "src",
+      `https://crests.football-data.org/${arrayNuevo2[i].id}.svg`
+    );
+    imageAway.setAttribute("alt", "escudo equipo");
+    imageAway.width = 50;
     club.innerText = arrayNuevo2[i].name;
+
 
     let tdPartidos = document.createElement("td");
     tdPartidos.innerText = arrayNuevo2[i].matches;
@@ -137,6 +155,8 @@ function getStats2(partidos) {
     let tdGolesE = document.createElement("td");
     tdGolesE.innerText = arrayNuevo2[i].goals;
 
+    escudo.append(imageAway);
+    tr.append(escudo);
     tr.append(club);
     tr.append(tdGolesE);
     tr.append(tdPartidos);

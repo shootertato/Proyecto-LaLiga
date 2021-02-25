@@ -11,7 +11,8 @@ table.clasificacion thead th{
     padding: 15px;
 }
 thead.encabezado{
-    background-color: red;
+    background-color: darkblue;
+    color: white;
 }
 td{
     padding: 10px;
@@ -22,6 +23,18 @@ th{
 .alerta{
     color: red;
     text-align: center;
+}
+.busqueda{
+    margin-left: 19%;
+    width: 60%;
+    color: white;  
+}
+.leyenda{
+    color: white;
+}
+.etiqueta{
+    color: white;
+    margin-right: 2%;
 }
 button{
     background-color: red;
@@ -63,37 +76,80 @@ td.visitante{
     width: 20px;
     border-radius: 30px;
 }
+.titulos{
+    text-align: center;
+    color: white;
+}
 .win{
-    height: 23px;
-    width: 23px;
+    height: 28px;
+    width: 28px;
     border-radius: 25px;
     background-color: green;
     float: left;
     text-align: center;
 }
 .lose{
-    height: 23px;
-    width: 23px;
+    height: 28px;
+    width: 28px;
     border-radius: 25px;
     background-color: red;
     float: left;
     text-align: center;
 }
 .draw{
-    height: 23px;
-    width: 23px;
+    height: 28px;
+    width: 28px;
     border-radius: 25px;
     background-color: orange;
     float: left;
     text-align: center;
 }
-.resultados {
+#resultados {
     margin-top: 5%;
-    margin-left: 6%;
-    margin-right: 6%;
-    width: 90%;
+    margin-left: 22%;
+    width: 55%;
     border-left: solid 2px black;
     border-right: solid 2px black;
+    font-size: 20px;
+    background-color: white;
+}
+#clasificacion{
+    margin-top: 5%;
+    margin-left: 15%;
+    width: 70%;
+    border-left: solid 2px black;
+    border-right: solid 2px black;
+    font-size: 20px;
+    background-color: white;
+}
+.encabezado{
+    width: 40%;
+    font-size: 20px;
+}
+.titulo1{
+    margin-top: 2.5%;
+    margin-left: 23%;
+    text-align: left;
+    color: white;
+    font-size: 20px;
+}
+.titulo2{
+    margin-top: 2.5%;
+    margin-left: 23%;
+    text-align: left;
+    color: white;
+    font-size: 20px;
+}
+.columna1{
+    float: left;
+    width: 45%;
+    margin-left: 3%;
+}
+.columna2{
+    float: right;
+    width: 45%;
+    margin-right: 3%;
+       
 }
 thead{
     border: solid 2px black;
@@ -102,6 +158,7 @@ h1.titulo{
     margin-left: 6% ;
     margin-top: 30px;
     margin-bottom: -40px;
+    color: white;
 }
 .busqueda{
 font-size: 25px;
@@ -115,20 +172,26 @@ width: 60%;
     margin-top: 25px;
     margin-bottom: 0px;
 }
-
-
-.titulos{
-    margin-top: 2.5%;
-    text-align: center;
+.escudo{
+    padding: 10px;
 }
+/* input.radio{
+    
+} */
+
 .textos{
-    border: 3px black solid;
     text-align: center;
-    background-color: lightcoral;
+    background-color: cornflowerblue;
     margin-left: 30%;
     margin-right: 30%;
     padding: 4px;
     font-size: 30px;
+    border-radius: 30px;
+    box-shadow: 12px 12px 16px 0 rgba(255, 255, 255, 0.3) inset,
+    -8px -8px 12px 0 rgba(0, 0, 0, .25) inset;
+}
+.body{
+    background-color: blue;
 }
 
 .link{
@@ -150,9 +213,6 @@ width: 60%;
     height: 100%;
     width: 100%;
     position:fixed;
-    -webkit-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
     z-index: 10000;
 }
 

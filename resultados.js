@@ -1,6 +1,3 @@
-let data = matches;
-let partidos = data.matches;
-
 function getFetch(){
   const url = "http://api.football-data.org/v2/competitions/2014/matches";
   fetch(url,{
@@ -84,7 +81,6 @@ function genera_tabla(partidos) {
     tblBody.appendChild(hilera);
   }
 }
-genera_tabla(partidos);
 
 /* filtrarPorNombre hace un filtro segun lo que escribes en la barra de busqueda */
 
@@ -108,9 +104,6 @@ function filtrarPorNombre(partidos) {
   
     genera_tabla(equipoNombre);
   }
-
-
-filtrarPorNombre(partidos);
 
 
 /* vaciar hace que la tabla se vacie de contenido para que no se concatene el contenido */
